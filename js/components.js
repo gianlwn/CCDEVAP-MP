@@ -1,5 +1,4 @@
-
-function loadTopNav(){
+function loadTopNav() {
   const html = `
     <nav class = "top-nav">
 
@@ -17,48 +16,46 @@ function loadTopNav(){
     </div>
   </nav>
   `;
-  
-  document.getElementById('top-nav').innerHTML = html;
+
+  document.getElementById("top-nav").innerHTML = html;
 }
 
-
-function loadSideNav(){
-
+function loadSideNav() {
   const currentPage = window.location.pathname;
 
   function isActive(page) {
-    return currentPage.includes(page) ? 'active' : '';
+    return currentPage.includes(page) ? "active" : "";
   }
 
   const html = `
     <aside class = "side-nav">
 
       <ul>
-        <li class="${isActive('dashboard')}">
+        <li class="${isActive("dashboard")}">
           <a href = "../user-profile-dashboard/dashboard.html">
             <span class ="icon"> 📋 </span> Overview
           </a>
         </li>
 
-        <li class="${isActive('userListings')}">
+        <li class="${isActive("userListings")}">
           <a href ="../user-profile-dashboard/userListings.html">
             <span class = "icon"> 🏷️ </span> Listings
           </a>
         </li>
         
-        <li class="${isActive('claimed')}">
+        <li class="${isActive("claimed")}">
           <a href ="../user-profile-dashboard/claimed.html">
             <span class = "icon"> 🛍️ </span> Claimed
           </a>
         </li>
         
-        <li class="${isActive('ratings')}">
+        <li class="${isActive("ratings")}">
           <a href = "../user-profile-dashboard/ratings.html">
             <span class = "icon"> ⭐ </span> Ratings
           </a>
         </li>
 
-        <li class="${isActive('profile')}">
+        <li class="${isActive("profile")}">
           <a href = "../user-profile-dashboard/profile.html">
             <span class = "icon"> 👤</span> Profile
           </a>
@@ -70,11 +67,43 @@ function loadSideNav(){
 
     </aside>
     `;
-  
-  document.getElementById('side-nav').innerHTML = html;
+
+  document.getElementById("side-nav").innerHTML = html;
 }
 
-// function loadAdminSideNav() { } 
+function loadAdminSideNav() {
+  const html = `
+  <div class="app-body">
+    <aside class="side-nav">
+      <div class="nav-links">
+        <a href="listingApproval.html" class="nav-item">Listings Approval</a>
+        <a href="reports.html" class="nav-item">Reports</a>
+        <a href="users.html" class="nav-item">Users</a>
+        <a href="categories.html" class="nav-item">Categories</a>
+        <a href="admins.html" class="nav-item">Admins</a>
+      </div>
+      <div class="sign-out-box">
+        <a href="" class="sign-out-button">Sign Out</a>
+      </div>
+    </aside>
+
+    <div class="main-container">
+      <div class="sub-header">
+        <h2>Admin Panel</h2>
+        <div class="login-status">
+          Logged in as <strong>Administrator</strong>
+        </div>
+      </div>
+      
+      <main class="main-container">
+        <div class="placeholder-card">
+          stuff here..
+        </div>
+      </main>
+    </div>
+  </div>
+  `;
+}
 
 function createClaimedRow(item) {
   return `
@@ -97,7 +126,7 @@ function createClaimedRow(item) {
   `;
 }
 
-function createRatingsRow(item){
+function createRatingsRow(item) {
   return `
     <div class ="ratings-row">
     
@@ -121,30 +150,33 @@ function createRatingsRow(item){
   `;
 }
 
-function renderStars(rating){
-  let stars = '';
-    for (let i = 1; i <=5; i++) {
-      stars += i <= rating ? '★' : '☆';
-    }
-  
+function renderStars(rating) {
+  let stars = "";
+  for (let i = 1; i <= 5; i++) {
+    stars += i <= rating ? "★" : "☆";
+  }
+
   return stars;
 }
 
 function loadClaimedRows(containerId) {
- fetch ('../data/mock-claimed.json')
-        .then (res => res.json())
-        .then(items => {
+  fetch("../data/mock-claimed.json")
+    .then((res) => res.json())
+    .then((items) => {
       const container = document.getElementById(containerId);
-  container.innerHTML = items.map (item => createClaimedRow(item)).join('');
-        });
+      container.innerHTML = items
+        .map((item) => createClaimedRow(item))
+        .join("");
+    });
 }
 
 function loadRatingsRows(containerId) {
- fetch ('../data/mock-ratings.json')
-  .then( res => res.json())
-  .then ( items => {
-    const container = document.getElementById(containerId);
-    container.innerHTML = items.map(item => createRatingsRow(item)).join('');
-  });
-   
+  fetch("../data/mock-ratings.json")
+    .then((res) => res.json())
+    .then((items) => {
+      const container = document.getElementById(containerId);
+      container.innerHTML = items
+        .map((item) => createRatingsRow(item))
+        .join("");
+    });
 }
