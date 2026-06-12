@@ -100,7 +100,7 @@ body {
 }
 
 /* 5. SIDE NAVIGATION */
-.side-nav {
+.admin-side-nav {
   width: var(--sidebar-width);
   background-color: var(--card-bg);
   display: flex;

@@ -71,39 +71,7 @@ function loadSideNav() {
   document.getElementById("side-nav").innerHTML = html;
 }
 
-function loadAdminSideNav() {
-  const html = `
-  <div class="app-body">
-    <aside class="side-nav">
-      <div class="nav-links">
-        <a href="listingApproval.html" class="nav-item">Listings Approval</a>
-        <a href="reports.html" class="nav-item">Reports</a>
-        <a href="users.html" class="nav-item">Users</a>
-        <a href="categories.html" class="nav-item">Categories</a>
-        <a href="admins.html" class="nav-item">Admins</a>
-      </div>
-      <div class="sign-out-box">
-        <a href="" class="sign-out-button">Sign Out</a>
-      </div>
-    </aside>
-
-    <div class="main-container">
-      <div class="sub-header">
-        <h2>Admin Panel</h2>
-        <div class="login-status">
-          Logged in as <strong>Administrator</strong>
-        </div>
-      </div>
-      
-      <main class="main-container">
-        <div class="placeholder-card">
-          stuff here..
-        </div>
-      </main>
-    </div>
-  </div>
-  `;
-}
+// function loadAdminSideNav() { }
 
 function createClaimedRow(item) {
   return `
