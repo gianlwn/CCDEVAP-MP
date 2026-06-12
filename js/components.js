@@ -1,23 +1,23 @@
 function loadTopNav() {
-  const html = `
-    <nav class = "top-nav">
-
-    <div class = "nav-brand">
-      <!-- <img src="..."> --> 
-      <span> CampusCart </span>
-    </div>
-
-    <div class = "nav-icons">
-      <button id = "theme-toggle" onclick="toggleTheme()"> 🌙 </button>
-      <button id = "notifications"> 🔔 </button>
-      <button id = "cart" onclick = "window.location.href='../homepage/cart.html'"> 🛒 </button>
-      <button id = "home" onclick = "window.location.href='../homepage/homepage.html'"> 🏠 </button>
-      <button id = "profileView" onclick="window.location.href='../user-dashboard/dashboard.html'"> 👤</button>
-    </div>
-  </nav>
+const html = `
+    <header class="top-nav">
+      <div class="logo-section">
+        <div class="logo-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <span class="logo-text">CampusCart</span>
+      </div>
+      <div class="nav-icons">
+        <div class="icon-btn" title="Dark Mode"><i class="fa-solid fa-moon"></i></div>
+        <div class="icon-btn" title="Notifications"><i class="fa-solid fa-bell"></i></div>
+        <div class="icon-btn" title="Cart"><i class="fa-solid fa-shopping-cart"></i></div>
+        <div class="icon-btn" title="Home"><i class="fa-solid fa-house"></i></div>
+        <div class="icon-btn" title="Profile"><i class="fa-solid fa-circle-user"></i></div>
+      </div>
+    </header>
   `;
 
-  document.getElementById("top-nav").innerHTML = html;
+  document.getElementById("top-nav-container").innerHTML = html;
 }
 
 function loadSideNav() {
@@ -71,7 +71,22 @@ function loadSideNav() {
   document.getElementById("side-nav").innerHTML = html;
 }
 
-// function loadAdminSideNav() { }
+function loadAdminSideNav() {
+const html = `
+    <div class="nav-links">
+      <a href="listingApproval.html" class="nav-item">Listings Approval</a>
+      <a href="reports.html" class="nav-item">Reports</a>
+      <a href="users.html" class="nav-item">Users</a>
+      <a href="categories.html" class="nav-item">Categories</a>
+      <a href="admins.html" class="nav-item">Admins</a>
+    </div>
+    <div class="sign-out-box">
+      <a href="" class="sign-out-btn">Sign Out</a>
+    </div>
+  `;
+
+  document.getElementById("admin-side-nav").innerHTML = html;
+}
 
 function createClaimedRow(item) {
   return `
