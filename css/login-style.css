@@ -1,0 +1,476 @@
+.auth-viewport-center {
+  overflow-y: auto ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 24px;
+  background-color: var(--bg-color);
+}
+
+/*FLOATING CARD*/
+
+.auth-card-panel {
+  width: 480px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.auth-form-container {
+  width: 100%;
+  background-color: var(--card-bg);
+  border-radius: 36px;
+  padding: 40px 45px 30px 45px;
+  border: 4px solid #ffffff;
+  box-shadow: none; 
+  display: flex;
+  flex-direction: column;
+}
+
+/*HEADER AND LOGO*/
+
+.auth-brand-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.brand-logo-circle {
+  background-color: var(--dark-bg) ;
+  width: 76px ;
+  height: 76px ;
+  border-radius: 50% ;
+  display: flex ;
+  align-items: center ;
+  justify-content: center ;
+  margin-bottom: 8px ;
+}
+
+.brand-logo-circle i {
+  font-size: 32px ;
+  color: var(--card-bg) ;
+}
+
+.brand-header-banner {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.auth-brand-title {
+  display: none ;
+}
+
+button.auth-pill-dispatch-code-btn {
+  background-color: #bc9e82 ;
+  color: #ffffff ;
+  width: 100% ;
+  padding: 12px ;
+  font-size: 14px ;
+  font-weight: 700 ;
+  border: none ;
+  border-radius: 24px ;
+  cursor: pointer ;
+  letter-spacing: 0.5px ;
+  margin-bottom: 8px ;
+  margin-top: 8px ;
+  transition: background-color 0.2s ease ;
+}
+
+button.auth-pill-dispatch-code-btn:hover {
+  background-color: var(--accent) ;
+}
+
+button.auth-pill-confirm-btn {
+  background-color: transparent ;
+  color: var(--accent) ;
+  border: 2px solid var(--accent) ;
+  width: 100% ;
+  padding: 12px ;
+  font-size: 15px ;
+  font-weight: 700 ;
+  border-radius: 24px ;
+  cursor: pointer ;
+  letter-spacing: 0.5px ;
+  margin-top: 16px ;
+  transition: all 0.2s ease ;
+}
+
+button.auth-pill-confirm-btn:hover {
+  background-color: var(--dark-bg) ;
+  color: #ffffff ;
+}
+
+/*COMPONENT CONTROLS AND PILL-SHAPED FORM INPUTS*/
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 13.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding-left: 12px;
+}
+
+input.auth-pill-input,
+select.auth-pill-input {
+  width: 100% ;
+  padding: 14px 22px ;
+  font-size: 15px ;
+  font-weight: 600 ;
+  color: var(--accent) ;
+  background-color: rgba(255, 255, 255, 0.45) ;
+  border: none ;
+  border-radius: 24px ;
+  outline: none ;
+  box-sizing: border-box ;
+  transition: all 0.2s ease;
+}
+
+input.auth-pill-input:focus,
+select.auth-pill-input:focus {
+  background-color: #ffffff ;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05) ;
+}
+
+input.auth-pill-input::placeholder {
+  color: rgba(92, 61, 30, 0.4) ;
+}
+
+.static-value-node {
+  background-color: rgba(255, 255, 255, 0.25) ;
+  cursor: not-allowed ;
+  display: flex;
+  align-items: center;
+}
+
+.form-static-notice-pill {
+  background-color: #bc9e82;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-align: center;
+  margin: 4px 0 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/*ACTION LINK RUNTIMES AND OUTSIDE BUTTONS*/
+
+.form-link-action-zone {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.auth-sub-link {
+  color: rgba(92, 61, 30, 0.65);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.auth-sub-link:hover {
+  color: var(--dark-bg);
+  text-decoration: underline;
+}
+
+.auth-pill-submit-btn {
+  background-color: var(--dark-bg);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 24px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
+.auth-pill-submit-btn:hover {
+  background-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.auth-pill-submit-btn:active {
+  transform: translateY(0);
+}
+
+.auth-outer-actions-bar {
+  width: 100%;
+  margin-top: 16px;
+  padding: 0 10px;
+}
+
+.auth-register-capsule-link {
+  display: block;
+  width: 100%;
+  background-color: #bc9e82;
+  color: #ffffff;
+  text-align: center;
+  padding: 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13.5px;
+  text-transform: lowercase;
+  transition: background-color 0.2s ease;
+}
+
+.auth-register-capsule-link:hover {
+  background-color: var(--accent);
+}
+
+/*alerts*/
+
+.alert-banner {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 13px;
+  display: none;
+}
+
+.alert-error {
+  background-color: #fce8e6;
+  color: #a82e2e;
+  border: 2px solid #f5c2c2;
+}
+
+.alert-success {
+  background-color: #e6f4ea;
+  color: #137333;
+  border: 2px solid #ceead6;
+}
+
+/*register */
+
+.registration-standalone-card {
+  width: 490px;
+  max-width: 100%;
+  background-color: var(--card-bg);
+  border-radius: 32px;
+  padding: 24px 40px;
+  border: 4px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  margin: 15px auto;
+  box-sizing: border-box;
+}
+
+.registration-standalone-card form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row-align {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.form-row-align label {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 13px;
+  margin-bottom: 4px;
+  text-align: left;
+  padding-left: 12px;
+}
+
+.input-cell {
+  width: 100%;
+}
+
+.avatar-setup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.avatar-circle-frame {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 3px solid var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+}
+
+.avatar-circle-frame i {
+  font-size: 42px;
+  color: var(--accent);
+}
+
+.edit-avatar-trigger-btn {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.edit-avatar-trigger-btn:hover {
+  text-decoration: underline;
+}
+
+.registration-actions-centered-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+  width: 100%;
+}
+
+.auth-pill-submit-action-btn-centered {
+  background-color: var(--dark-bg);
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  font-size: 14.5px;
+  font-weight: 700;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(59, 36, 16, 0.12);
+  transition: background-color 0.2s ease;
+}
+
+.auth-pill-cancel-link-stacked {
+  color: rgba(92, 61, 30, 0.65);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 2px 12px;
+}
+
+.dropdown-wrapper {
+  position: relative;
+}
+
+.select-arrow-reset {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%235c3d1e'><path d='M1 3.5l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  padding-right: 40px ;
+}
+
+/*dark mode*/
+
+body.darkMode {
+  background-color: #160e08;
+}
+
+body.darkMode .auth-form-container,
+body.darkMode .registration-standalone-card {
+  background-color: #28180e;
+  border-color: #3b2410;
+}
+
+body.darkMode .auth-brand-title,
+body.darkMode .form-row-align label,
+body.darkMode .avatar-circle-frame i,
+body.darkMode .edit-avatar-trigger-btn,
+body.darkMode .brand-header-banner,
+body.darkMode .input-group label {
+  color: var(--card-bg);
+}
+
+body.darkMode .avatar-circle-frame {
+  border-color: var(--card-bg);
+}
+
+body.darkMode input.auth-pill-input,
+body.darkMode select.auth-pill-input {
+  background-color: rgba(59, 36, 16, 0.6) ;
+  color: #ffffff ;
+}
+
+body.darkMode input.auth-pill-input:focus,
+body.darkMode select.auth-pill-input:focus {
+  background-color: #3b2410 ;
+}
+
+body.darkMode .auth-sub-link,
+body.darkMode .auth-pill-cancel-link-stacked {
+  color: var(--bg-color);
+}
+
+body.darkMode .auth-sub-link:hover,
+body.darkMode .auth-pill-cancel-link-stacked:hover {
+  color: #ffffff;
+}
+
+body.darkMode .auth-pill-submit-btn,
+body.darkMode .auth-pill-submit-action-btn-centered {
+  background-color: var(--card-bg);
+  color: var(--dark-bg);
+  border-color: #3b2410;
+}
+
+body.darkMode .auth-pill-submit-btn:hover,
+body.darkMode .auth-pill-submit-action-btn-centered:hover {
+  background-color: var(--bg-color);
+}
+
+body.darkMode .form-static-notice-pill,
+body.darkMode .auth-register-capsule-link,
+body.darkMode .auth-pill-dispatch-code-btn {
+  background-color: #4a2f1b ;
+}
+
+body.darkMode .form-static-notice-pill:hover,
+body.darkMode .auth-register-capsule-link:hover,
+body.darkMode .auth-pill-dispatch-code-btn:hover {
+  background-color: var(--accent) ;
+}
+
+body.darkMode .auth-pill-confirm-btn {
+  border-color: var(--card-bg) ;
+  color: var(--card-bg) ;
+}
+
+body.darkMode .auth-pill-confirm-btn:hover {
+  background-color: var(--card-bg) ;
+  color: var(--dark-bg) ;
+}
+
+body.darkMode .select-arrow-reset {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23f0e0b8'><path d='M1 3.5l5 5 5-5z'/></svg>");
+}
