@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/all.min.css" />
+  <link rel="stylesheet" href="../css/admin-style.css" />
+  <link rel="stylesheet" href="../css/login-style.css" />
+  <title>CampusCart | Complete Setup</title>
+</head>
+<body class="auth-viewport-center">
 
+  <div class="registration-standalone-card">
+    <div class="form-row-align" style="align-items: center; margin-bottom: 20px;">
+      <div class="avatar-setup-container">
+        <div class="avatar-circle-frame">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <a href="#" class="edit-avatar-trigger-btn" onclick="triggerMockFileSelection(event)">Edit Image</a>
+      </div>
+    </div>
+
+    <div id="error-alert" class="alert-banner alert-error"></div>
+    <div id="success-alert" class="alert-banner alert-success"></div>
+
+    <form id="profileForm" onsubmit="commitUserProfile(event)">
+      <div class="form-row-align">
+        <label for="fullName">Full Name</label>
+        <div class="input-cell">
+          <input type="text" id="fullName" class="auth-pill-input" placeholder="e.g. Juan Dela Cruz" required />
+        </div>
+      </div>
+
+      <div class="form-row-align">
+        <label>Email</label>
+        <div class="input-cell">
+          <div id="emailDisplay" class="auth-pill-input static-value-node">Loading...</div>
+        </div>
+      </div>
+
+      <div class="form-row-align">
+        <label for="password">Password</label>
+        <div class="input-cell">
+          <input type="password" id="password" class="auth-pill-input" placeholder="••••••••" required />
+        </div>
+      </div>
+
+      <div class="form-row-align">
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="input-cell">
+          <input type="password" id="confirmPassword" class="auth-pill-input" placeholder="••••••••" required />
+        </div>
+      </div>
+
+      <div class="form-row-align">
+        <label for="schoolSelect">School/University</label>
+        <div class="input-cell dropdown-wrapper">
+          <select id="schoolSelect" class="auth-pill-input select-arrow-reset" required>
+            <option value="" disabled selected hidden>Select...</option>
+            <option value="UPD">University of the Philippines Diliman</option>
+            <option value="ADMU">Ateneo de Manila University</option>
+            <option value="DLSU">De La Salle University</option>
+            <option value="UST">University of Santo Tomas</option>
+            <option value="PUP">Polytechnic University of the Philippines</option>
+            <option value="UPM">University of the Philippines Manila</option>
+            <option value="MAPUA">Mapúa University</option>
+            <option value="FEU">Far Eastern University</option>
+            <option value="UA&P">University of Asia and the Pacific</option>
+            <option value="PLM">Pamantasan ng Lungsod ng Maynila</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row-align">
+        <label for="courseCode">Course Code</label>
+        <div class="input-cell">
+          <input type="text" id="courseCode" class="auth-pill-input" placeholder="e.g. BS-CS" required />
+        </div>
+      </div>
+
+      <div class="form-row-align">
+        <label for="phoneNumber">Phone</label>
+        <div class="input-cell">
+          <input type="text" id="phoneNumber" class="auth-pill-input" placeholder="e.g. 09123456789" pattern="09[0-9]{9}" minlength="11" maxlength="11" required/>
+        </div>
+      </div>
+
+      <div class="registration-actions-centered-stack">
+        <button type="submit" class="auth-pill-submit-action-btn-centered">Complete Profile</button>
+        <a href="login.html" class="auth-pill-cancel-link-stacked">Cancel</a>
+      </div>
+    </form>
+  </div>
+
+  <script src="../js/toggletheme.js"></script>
+  <script src="../js/auth-flows.js"></script>
+</body>
+</html>
