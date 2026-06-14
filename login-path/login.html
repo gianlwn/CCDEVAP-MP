@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/all.min.css" />
+  <link rel="stylesheet" href="../css/admin-style.css" />
+  <link rel="stylesheet" href="../css/login-style.css" />
+  <title>CampusCart | Login</title>
+</head>
+<body class="auth-viewport-center">
+  
+  <div class="auth-card-panel">
+    <div class="auth-card-header">
+      <div class="auth-brand-logo-container">
+        <div class="brand-logo-circle">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+      </div>
+      <h1 class="brand-header-banner">EXCLUSIVELY FOR STUDENTS!</h1>
+    </div>
 
+    <div id="error-alert" class="alert-banner alert-error"></div>
+    
+    <form id="loginForm" class="auth-form-container" onsubmit="executeMockLogin(event)">
+      <div class="input-group">
+        <label for="email">Educational Email Address</label>
+        <input type="email" id="email" class="auth-pill-input" placeholder="yourname@university.edu.ph" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.edu\.ph$" title="Please use your official university email ending in .edu.ph" required />
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="auth-pill-input" placeholder="••••••" required />
+      </div>
+
+      <div class="form-static-notice-pill">
+        <i class="fa-solid fa-circle-exclamation"></i> Only valid .edu.ph addresses are accepted
+      </div>
+
+      <div class="form-link-action-zone">
+        <a href="forgotPassword.html" class="auth-sub-link">forgot password</a>
+      </div>
+
+      <button type="submit" id="submitBtn" class="auth-pill-submit-btn">LOG IN</button>
+    </form>
+
+    <div class="auth-outer-actions-bar">
+      <a href="emailverification.html" class="auth-register-capsule-link">no account? register here!</a>
+    </div>
+  </div>
+
+  <script src="../js/toggletheme.js"></script>
+  <script src="../js/auth-flows.js"></script>
+</body>
+</html>
