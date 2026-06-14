@@ -1,5 +1,5 @@
 function loadAdminSideNav(page) {
-  const html = `
+    const html = `
     <div class="nav-links">
       <a href="adminDashboard.html" class="nav-item">Admin Dashboard</a> 
       <a href="listingApproval.html" class="nav-item">Listings Approval</a>
@@ -13,11 +13,65 @@ function loadAdminSideNav(page) {
     </div>
   `;
 
-  const sidebar = document.getElementById("admin-side-nav");
-  sidebar.innerHTML = html;
+    const sidebar = document.getElementById("admin-side-nav");
+    sidebar.innerHTML = html;
 
-  const activeLink = sidebar.querySelector(`a[href="${page}"]`);
-  if (activeLink) {
-    activeLink.classList.add("active");
-  }
+    const activeLink = sidebar.querySelector(`a[href="${page}"]`);
+    if (activeLink) {
+        activeLink.classList.add("active");
+    }
+}
+
+function displayAdmins() {
+    const container = document.getElementById("admins-stack-list");
+
+    if (!container) {
+        return;
+    } else {
+        const adminsArray = [
+            // temporary only
+            { username: "Mikyla Kirsten Aguirre", email: "mikyla_kirsten_aguirre@dlsu.edu.ph", status: "active" },
+            { username: "Giancarlo Lawan", email: "giancarlo_lawan@dlsu.edu.ph", status: "active" },
+            { username: "Bernard Florian Llagas", email: "bernard_florian_llagas@dlsu.edu.ph", status: "inactive" },
+            { username: "Sky Hannah Parado", email: "sky_parado@dlsu.edu.ph", status: "active" },
+            { username: "Camille Erika Sarabia", email: "camille_erika_sarabia@dlsu.edu.ph", status: "active" },
+
+        ];
+
+        if (adminsArray.length === 0) {
+            container.innerHTML = `
+            <div class="empty-admins-msg" style="">
+                No administrators found. Click "Add Administrator" to create one.
+            </div>
+            `;
+        } else {
+            container.innerHTML = adminsArray.map(admin => {
+                const isActive = admin.status && admin.status.toLowerCase() === 'active';
+                const badgeClass = isActive ? 'pill-status-active' : 'pill-status-inactive';
+                const statusText = isActive ? 'Active' : 'Inactive';
+
+                return `
+                <div class="admin-identity-row-card">
+                        <div class="avatar-wireframe-box"></div>
+                        <div class="admin-text-details">
+                            <span class="admin-display-name">${admin.username}</span>
+                            <span class="admin-display-email">${admin.email}</span>
+                        </div>
+                        <div class="admin-status-badge-zone">
+                            <span class="badge-pill ${badgeClass}">${statusText}</span>
+                        </div>
+                        <div class="admin-actions-button-group">
+                            <button class="action-trigger edit-trigger-btn">
+                                <i class="fa-solid fa-pen-to-square"></i> Edit
+                            </button>
+                            <div class="button-inner-divider"></div>
+                            <button class="action-trigger revoke-trigger-btn">
+                                <i class="fa-solid fa-user-slash"></i> Revoke
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+    }
 }

@@ -30,9 +30,8 @@
                 <div class="admins-toolbar">
                     <div class="toolbar-left-panel">
                         <h3>Administrators</h3>
-                        <span class="admins-counter-text">Current Admins: 12</span>
+                        <span class="admins-counter-text">Current Admins: 5</span>
                     </div>
-
                     <div class="toolbar-right-panel">
                         <button class="add-admin-action-btn">
                             <i class="fa-solid fa-plus"></i> Add Administrator
@@ -43,65 +42,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="admins-stack-list">
-                    <div class="admin-identity-row-card">
-                        <div class="avatar-wireframe-box"></div>
-                        <div class="admin-text-details">
-                            <span class="admin-display-name">Username</span>
-                            <span class="admin-display-email">email.com</span>
-                        </div>
-                        <div class="admin-status-badge-zone">
-                            <span class="badge-pill pill-status-active">Active</span>
-                        </div>
-                        <div class="admin-actions-button-group">
-                            <button class="action-trigger edit-trigger-btn">
-                                <i class="fa-solid fa-pen-to-square"></i> Edit
-                            </button>
-                            <div class="button-inner-divider"></div>
-                            <button class="action-trigger revoke-trigger-btn">
-                                <i class="fa-solid fa-user-slash"></i> Revoke
-                            </button>
-                        </div>
-                    </div>
-                    <div class="admin-identity-row-card">
-                        <div class="avatar-wireframe-box"></div>
-                        <div class="admin-text-details">
-                            <span class="admin-display-name">Username</span>
-                            <span class="admin-display-email">email.com</span>
-                        </div>
-                        <div class="admin-status-badge-zone">
-                            <span class="badge-pill pill-status-inactive">Inactive</span>
-                        </div>
-                        <div class="admin-actions-button-group">
-                            <button class="action-trigger edit-trigger-btn">
-                                <i class="fa-solid fa-pen-to-square"></i> Edit
-                            </button>
-                            <div class="button-inner-divider"></div>
-                            <button class="action-trigger revoke-trigger-btn">
-                                <i class="fa-solid fa-user-slash"></i> Revoke
-                            </button>
-                        </div>
-                    </div>
-                    <div class="admin-identity-row-card">
-                        <div class="avatar-wireframe-box"></div>
-                        <div class="admin-text-details">
-                            <span class="admin-display-name">Username</span>
-                            <span class="admin-display-email">email.com</span>
-                        </div>
-                        <div class="admin-status-badge-zone">
-                            <span class="badge-pill pill-status-active">Active</span>
-                        </div>
-                        <div class="admin-actions-button-group">
-                            <button class="action-trigger edit-trigger-btn">
-                                <i class="fa-solid fa-pen-to-square"></i> Edit
-                            </button>
-                            <div class="button-inner-divider"></div>
-                            <button class="action-trigger revoke-trigger-btn">
-                                <i class="fa-solid fa-user-slash"></i> Revoke
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <div id="admins-stack-list"></div>
             </main>
         </div>
     </div>
@@ -111,6 +52,7 @@
     <script>
         loadTopNav();
         loadAdminSideNav('admins.html');
+        displayAdmins();
     </script>
 </body>
 

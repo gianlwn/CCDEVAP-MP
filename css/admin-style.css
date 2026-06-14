@@ -38,6 +38,7 @@ body {
   width: var(--sidebar-width);
   background-color: var(--card-bg);
   display: flex;
+  gap: 20px;
   flex-direction: column;
   justify-content: space-between;
   border-right: 2px solid var(--accent);
@@ -185,6 +186,7 @@ body {
   .dashboard-grid-2x2 {
     grid-template-columns: 1fr;
   }
+
   .main-content {
     overflow-y: auto;
   }
@@ -277,7 +279,7 @@ body {
   font-size: 14px;
 }
 
-.admins-stack-list {
+#admins-stack-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -288,6 +290,7 @@ body {
   border-radius: 20px;
   padding: 14px 28px;
   display: flex;
+  gap: 20px;
   align-items: center;
   box-shadow: 0 4px 10px rgba(59, 36, 16, 0.08);
 }
@@ -353,6 +356,7 @@ body {
   font-size: 13px;
   letter-spacing: -0.2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-left: 50px;
 }
 
 .pill-status-active {
@@ -399,11 +403,19 @@ body {
   background-color: rgba(92, 61, 30, 0.25);
 }
 
+.empty-admins-msg {
+  text-align: center;
+  padding: 40px;
+  color: var(--dark-bg);
+  font-weight: 600;
+}
+
 @media (max-width: 850px) {
   .admin-identity-row-card {
     flex-wrap: wrap;
     gap: 16px;
   }
+
   .admin-status-badge-zone {
     flex: none;
   }
@@ -536,6 +548,7 @@ body {
     flex-wrap: wrap;
     gap: 16px;
   }
+
   .user-info-extra {
     display: none;
   }
