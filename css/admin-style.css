@@ -403,7 +403,8 @@ body {
   background-color: rgba(92, 61, 30, 0.25);
 }
 
-.empty-admins-msg {
+.empty-admins-msg,
+.empty-users-msg {
   text-align: center;
   padding: 40px;
   color: var(--dark-bg);
@@ -462,7 +463,7 @@ body {
   font-size: 14px;
 }
 
-.users-stack-list {
+#users-stack-list {
   display: flex;
   flex-direction: column;
   gap: 16px;

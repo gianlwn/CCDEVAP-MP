@@ -29,7 +29,7 @@ function displayAdmins() {
         return;
     } else {
         const adminsArray = [
-            // temporary only
+            // temporary only (for frontend purposes only)
             { username: "Mikyla Kirsten Aguirre", email: "mikyla_kirsten_aguirre@dlsu.edu.ph", status: "active" },
             { username: "Giancarlo Lawan", email: "giancarlo_lawan@dlsu.edu.ph", status: "active" },
             { username: "Bernard Florian Llagas", email: "bernard_florian_llagas@dlsu.edu.ph", status: "inactive" },
@@ -40,7 +40,7 @@ function displayAdmins() {
 
         if (adminsArray.length === 0) {
             container.innerHTML = `
-            <div class="empty-admins-msg" style="">
+            <div class="empty-admins-msg">
                 No administrators found. Click "Add Administrator" to create one.
             </div>
             `;
@@ -67,6 +67,57 @@ function displayAdmins() {
                             <div class="button-inner-divider"></div>
                             <button class="action-trigger revoke-trigger-btn">
                                 <i class="fa-solid fa-user-slash"></i> Revoke
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+    }
+}
+
+function displayUsers() {
+    const container = document.getElementById("users-stack-list");
+
+    if (!container) {
+        return;
+    } else {
+        const usersArray = [
+            // temporary only (for frontend purposes only)
+            { username: "Andie Kirsten Woo", email: "andie_woo@dlsu.edu.ph", dateJoined: "Jun 12, 2026" },
+            { username: "Alexa Nicole Pleyto", email: "alexa_pleyto@dlsu.edu.ph", dateJoined: "May 28, 2026" },
+            { username: "Christine Cote", email: "tintin_cote@dlsu.edu.ph", dateJoined: "Apr 04, 2026" },
+        ];
+
+        if (usersArray.length === 0) {
+            container.innerHTML = `
+            <div class="empty-users-msg">
+                No users found.
+            </div>
+            `;
+        } else {
+            container.innerHTML = usersArray.map(user => {
+                return `
+                <div class="user-identity-row-card">
+                        <div class="avatar-wireframe-box"></div>
+                        <div class="user-text-details">
+                            <span class="user-display-name">${user.username}</span>
+                            <span class="user-display-email">${user.email}</span>
+                        </div>
+                        <div class="user-info-extra">
+                            <span class="info-label">Joined:</span>
+                            <span class="info-value">${user.dateJoined}</span>
+                        </div>
+                        <div class="user-status-badge-zone">
+                            <span class="badge-pill pill-status-active">Active</span>
+                        </div>
+                        <div class="user-actions-button-group">
+                            <button class="action-trigger view-trigger-btn">
+                                <i class="fa-solid fa-eye"></i> View
+                            </button>
+                            <div class="button-inner-divider"></div>
+                            <button class="action-trigger ban-trigger-btn">
+                                <i class="fa-solid fa-ban"></i> Ban
                             </button>
                         </div>
                     </div>
