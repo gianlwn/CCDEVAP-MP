@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/admin-style.css" />
-    <link rel="stylesheet" href="../css/top-nav.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    <link rel="stylesheet" href="../css/admin-style.css">
+    <link rel="stylesheet" href="../css/top-nav.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.min.js"
         integrity="sha512-n/G+dROKbKL3GVngGWmWfwK0yPctjZQM752diVYnXZtD/48agpUKLIn0xDQL9ydZ91x6BiOmTIFwWjjFi2kEFg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -16,6 +17,7 @@
 </head>
 
 <body>
+
     <div id="top-nav-container"></div>
     <div class="app-body">
         <aside id="admin-side-nav"></aside>
@@ -26,66 +28,59 @@
                     Logged in as <strong>Administrator</strong>
                 </div>
             </div>
+
             <main class="main-content">
                 <div class="approval-header">
                     <h1>Listings Approval Queue</h1>
-
                     <div class="approval-controls">
+
                         <div class="pending-count">
                             Pending Approval: 28
                         </div>
 
                         <div class="search-bar">
                             <input type="text" placeholder="Search...">
-                            <button><i class="fa-solid fa-magnifying-class"></i></button>
+                            <button>
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
                         </div>
+
                     </div>
                 </div>
 
                 <div class="approval-grid">
-
                     <div class="listing-card">
-
                         <div class="card-top">
                             <div class="listing-image"></div>
-
                             <div class="listing-info">
-                                <h3>Pre-Loved White Nursing Uniform Set</h3>
+                                <h2>Pre-Loved White Nursing Uniform Set</h2>
                                 <p>LST-1001</p>
                                 <p>PHP 250.00</p>
                                 <p>Garrett Graham</p>
-    
-                                <span class="status-badge">
-                                    Pending Review
-                                </span>
-                            </div>
 
+                                <span class="status-badge">Pending Review</span>
+                            </div>
                         </div>
-                
                         <div class="listing-actions">
                             <button class="approve-btn">Approve</button>
                             <button class="reject-btn">Reject</button>
                         </div>
+
                     </div>
 
                     <div class="listing-card">
 
                         <div class="card-top">
                             <div class="listing-image"></div>
-
                             <div class="listing-info">
-                                <h3>Engineering Drafting Kit (Complete Set)</h3>
+                                <h2>Engineering Drafting Kit (Complete Set)</h2>
                                 <p>LST-1002</p>
                                 <p>PHP 1200.00</p>
                                 <p>Kimi Antonelli</p>
-    
-                                <span class="status-badge">
-                                    Pending Review
-                                </span>
-                            </div>
 
+                                <span class="status-badge">Pending Review</span>
+                            </div>
                         </div>
-                
                         <div class="listing-actions">
                             <button class="approve-btn">Approve</button>
                             <button class="reject-btn">Reject</button>
@@ -93,23 +88,17 @@
                     </div>
 
                     <div class="listing-card">
-
                         <div class="card-top">
                             <div class="listing-image"></div>
-
                             <div class="listing-info">
-                                <h3>Scientific Calculator Casio fx-991EX</h3>
+                                <h2>Scientific Calculator Casio fx-991EX</h2>
                                 <p>LST-1003</p>
                                 <p>PHP 900.00</p>
                                 <p>Kathryn Bernardo</p>
-    
-                                <span class="status-badge">
-                                    Pending Review
-                                </span>
+                                <span class="status-badge">Pending Review</span>
                             </div>
-
                         </div>
-                
+
                         <div class="listing-actions">
                             <button class="approve-btn">Approve</button>
                             <button class="reject-btn">Reject</button>
@@ -117,29 +106,23 @@
                     </div>
 
                     <div class="listing-card">
-
                         <div class="card-top">
                             <div class="listing-image"></div>
 
                             <div class="listing-info">
-                                <h3>Laptop Stand Adjustable Aluminum</h3>
+                                <h2>Laptop Stand Adjustable Aluminum</h2>
                                 <p>LST-1004</p>
                                 <p>PHP 450.00</p>
                                 <p>Jeron Teng</p>
-    
-                                <span class="status-badge">
-                                    Pending Review
-                                </span>
-                            </div>
 
+                                <span class="status-badge">Pending Review</span>
+                            </div>
                         </div>
-                
+
                         <div class="listing-actions">
                             <button class="approve-btn">Approve</button>
                             <button class="reject-btn">Reject</button>
                         </div>
-                    </div>
-
                     </div>
                 </div>
             </main>
@@ -148,10 +131,12 @@
 
     <script src="../js/components.js"></script>
     <script src="../js/adminComponents.js"></script>
+
     <script>
         loadTopNav();
         loadAdminSideNav('listingApproval.html');
     </script>
+
 </body>
 
 </html>
