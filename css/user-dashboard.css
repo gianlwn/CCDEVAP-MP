@@ -227,3 +227,74 @@ body.darkMode #user-side-nav {
   background-color: #28180e;
   border-color: #3b2410;
 }
+
+#user-side-nav .nav-links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#user-side-nav .nav-item {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 24px;
+  text-decoration: none;
+  color: var(--dark-bg);
+  font-size: 16px;
+  font-weight: 700;
+  border-bottom: 1.5px solid var(--accent);
+  transition: background 0.2s ease;
+}
+
+#user-side-nav .nav-item:hover {
+  background-color: rgba(92, 61, 30, 0.08);
+}
+
+#user-side-nav .nav-item.active {
+  background-color: var(--bg-color);
+  color: var(--accent);
+  border-right: 4px solid var(--dark-bg);
+}
+
+#user-side-nav .nav-item i {
+  width: 20px;
+  font-size: 16px;
+  text-align: center;
+}
+
+#user-side-nav .sign-out-box {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+#user-side-nav .sign-out-btn {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+#user-side-nav .sign-out-btn:hover {
+  color: var(--dark-bg);
+  font-weight: 700;
+}
+
+body.darkMode #user-side-nav {
+  background-color: #28180e;
+  border-color: #3b2410;
+}
+
+body.darkMode #user-side-nav .nav-item {
+  color: #ffffff;
+  border-bottom-color: #3b2410;
+}
+
+body.darkMode #user-side-nav .nav-item.active {
+  background-color: #160e08;
+  color: var(--card-bg);
+  border-right-color: var(--card-bg);
+}
