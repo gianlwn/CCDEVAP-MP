@@ -12,8 +12,9 @@
 }
 
 .approval-header h1 {
-  font-size: 2rem;
-  color: #4d3826;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--dark-bg);
 }
 
 .approval-controls {
@@ -26,38 +27,12 @@
 
 .pending-count {
   background: #ffe98a;
-  color: #5b442d;
+  color: var(--accent);
   padding: 10px 18px;
   border-radius: 12px;
   font-size: 0.9rem;
   font-weight: 600;
-
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12);
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-  background: #c8a77b;
-  border-radius: 999px;
-  overflow: hidden;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12);
-}
-
-.search-bar input {
-  border: none;
-  background: transparent;
-  outline: none;
-  padding: 10px 15px;
-  width: 180px;
-}
-
-.search-bar button {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  padding: 10px 15px;
-  color: #5b442d;
 }
 
 #approval-grid {
@@ -67,7 +42,7 @@
 }
 
 .listing-card {
-  background: #c7a878;
+  background: var(--row-card-bg);
   border-radius: 18px;
   padding: 20px;
   width: 370px;
@@ -87,8 +62,8 @@
   width: 150px;
   height: 150px;
   min-width: 150px;
-  background: #f5ebd5;
-  border: 2px solid #4d3826;
+  background: var(--card-bg);
+  border: 2px solid var(--dark-bg);
   border-radius: 10px;
   position: relative;
   display: flex;
@@ -102,7 +77,7 @@
   position: absolute;
   width: 90%;
   height: 2px;
-  background: #4d3826;
+  background: var(--dark-bg);
   top: 50%;
   left: 5%;
 }
@@ -124,7 +99,7 @@
 
 .listing-info h2 {
   font-size: 1.5rem;
-  color: #4d3826;
+  color: var(--dark-bg);
   margin-bottom: 6px;
   overflow-wrap: break-word;
   word-break: break-word;
@@ -132,7 +107,7 @@
 
 .listing-info p {
   font-size: 1.15rem;
-  color: #3d2c1f;
+  color: var(--text-color);
   margin-bottom: 2px;
   font-weight: 500;
   overflow-wrap: break-word;
@@ -172,8 +147,8 @@
 }
 
 .approve-btn {
-  background: #b2c855;
-  color: #4d3826;
+  background: var(--success-pill);
+  color: var(--dark-bg);
 }
 
 .reject-btn {
@@ -184,49 +159,4 @@
 .approve-btn:hover,
 .reject-btn:hover {
   opacity: 0.9;
-}
-
-.search-capsule-box {
-  display: flex;
-  align-items: center;
-  background-color: #c4b187;
-  border-radius: 24px;
-  padding: 3px 4px 3px 18px;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.08);
-}
-
-.search-input-field {
-  background: transparent;
-  border: none;
-  outline: none;
-  padding: 6px 0;
-  font-size: 15px;
-  color: var(--dark-bg);
-  font-weight: 600;
-  width: 180px;
-}
-
-.search-input-field::placeholder {
-  color: rgba(59, 36, 16, 0.6);
-}
-
-.search-glass-btn {
-  background-color: var(--dark-bg);
-  border: none;
-  color: var(--dark-text);
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-}
-
-.empty-msg {
-  text-align: center;
-  padding: 40px;
-  color: var(--dark-bg);
-  font-weight: 600;
 }

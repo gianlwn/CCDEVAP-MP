@@ -62,7 +62,7 @@ function displayAdmins() {
                         <div class="admin-status-badge-zone">
                             <span class="badge-pill ${badgeClass}">${statusText}</span>
                         </div>
-                        <div class="admin-actions-button-group">
+                        <div class="action-button-group">
                             <button class="action-trigger edit-trigger-btn">
                                 <i class="fa-solid fa-pen-to-square"></i> Edit
                             </button>
@@ -86,9 +86,9 @@ function displayUsers() {
     } else {
         const usersArray = [
             // temporary only (for frontend purposes only)
-            { username: "Andie Kirsten Woo", email: "andie_woo@dlsu.edu.ph", dateJoined: "Jun 12, 2026" },
-            { username: "Alexa Nicole Pleyto", email: "alexa_pleyto@dlsu.edu.ph", dateJoined: "May 28, 2026" },
-            { username: "Christine Cote", email: "tintin_cote@dlsu.edu.ph", dateJoined: "Apr 04, 2026" },
+            { username: "Andie Kirsten Woo", email: "andie_woo@dlsu.edu.ph", dateJoined: "Jun 12, 2026", status: "active" },
+            { username: "Alexa Nicole Pleyto", email: "alexa_pleyto@dlsu.edu.ph", dateJoined: "May 28, 2026", status: "suspended" },
+            { username: "Christine Cote", email: "tintin_cote@dlsu.edu.ph", dateJoined: "Apr 04, 2026", status: "banned" },
         ];
 
         if (usersArray.length === 0) {
@@ -99,6 +99,11 @@ function displayUsers() {
             `;
         } else {
             container.innerHTML = usersArray.map(user => {
+                const isActive = user.status && user.status.toLowerCase() === 'active';
+                const isSuspended = user.status && user.status.toLowerCase() === 'suspended';
+                const pillClass = isActive ? 'pill-status-active' : (isSuspended ? 'pill-status-suspended' : 'pill-status-banned');
+                const statusText = isActive ? 'Active' : (isSuspended ? 'Suspended' : 'Banned');
+
                 return `
                     <div class="user-identity-row-card">
                         <div class="avatar-wireframe-box"></div>
@@ -111,9 +116,9 @@ function displayUsers() {
                             <span class="info-value">${user.dateJoined}</span>
                         </div>
                         <div class="user-status-badge-zone">
-                            <span class="badge-pill pill-status-active">Active</span>
+                            <span class="badge-pill ${pillClass}">${statusText}</span>
                         </div>
-                        <div class="user-actions-button-group">
+                        <div class="action-button-group">
                             <button class="action-trigger view-trigger-btn">
                                 <i class="fa-solid fa-eye"></i> View
                             </button>
@@ -160,7 +165,7 @@ function displayListingApprovals() {
                                 <p>${listing.listingId}</p>
                                 <p>PHP ${listing.price.toFixed(2)}</p>
                                 <p>${listing.seller}</p>
-                                <span class="status-badge">Pending Review</span>
+                                <span class="status-badge">Pending Approval</span>
                             </div>
                         </div>
                         <div class="listing-actions">
