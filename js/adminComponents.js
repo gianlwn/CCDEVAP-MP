@@ -242,41 +242,33 @@ function displayReports() {
             `;
         } else {
             container.innerHTML = reportsArray.map(report => {
-                
                 return `
                     <div class="report-row-card">
-
                         <div class="avatar-wireframe-box"></div>
-        
                         <div class="report-text-details">
                             <span class="report-type">${report.reportType}</span>
                             <span class="report-id">#${report.reportId}</span>
                             <span class="report-reporter">${report.reporter}</span>
                         </div>
-        
                         <div class="report-status-zone">
                             <span class="report-status-badge">
                                 ${report.status}
                             </span>
                         </div>
-        
                         <div class="report-reason-section">
                             <span class="reason-title">Reason:</span>
                             <span class="reason-content">
                                 ${report.reason}
                             </span>
                         </div>
-        
                         <div class="report-action-group">
                             <button class="warning-btn">
                                 Warning
                             </button>
-        
                             <button class="dismiss-btn">
                                 Dismiss
                             </button>
                         </div>
-        
                     </div> 
                 `;
             }).join('');
