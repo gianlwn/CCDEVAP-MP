@@ -179,6 +179,46 @@ function displayListingApprovals() {
     }
 }
 
-// function displayCategories() {}
+function displayCategories() {
+    const container = document.getElementById("category-grid");
+
+    if (!container) {
+        return;
+    } else {
+        const categoriesArray = [
+            // temporary
+            { categoryName: "Electronics", categoryId: "CTG-1001" },
+            { categoryName: "Clothing", categoryId: "CTG-1002" },
+            { categoryName: "School Supplies", categoryId: "CTG-1003" },
+            { categoryName: "Books", categoryId: "CTG-1004" },
+        ];
+
+        if (categoriesArray.length === 0) {
+            container.innerHTML = `
+            <div class="empty-msg">
+                No categories found.
+            </div>
+            `;
+        } else {
+            container.innerHTML = categoriesArray.map(category => {
+                return `
+                    <div class="category-card">
+                        <div class="card-top">
+                            <div class="category-image"></div>
+                            <div class="category-info">
+                                <h2>${category.categoryName}</h2>
+                                <p>${category.categoryId}</p>
+                            </div>
+                        </div>
+                        <div class="category-actions">
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+    }
+}
 
 // function displayReports() {}
