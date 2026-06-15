@@ -1,8 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CampusCart - HomePage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/homepage.css">
+    <link rel=""stylesheet" href=""../css/top-nav.css">
+    <title>CampusCart - HomePage</title>
+</head>
 
-  <link rel="stylesheet" href="../css/style.css">
+<body>
+    <div id="top-nav-container"></div>
+
+    <main class="container">
+        <div class="search-wrapper">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search keyword, shop names.....">
+            <button class="search-btn" title="Execute Search">🔍</button>
+        </div>
+        <div class="tag-container">
+            <button class="chip active" onclick="filterCategory('all')">Trending</button>
+            <button class="chip" onclick="filterCategory('for-you')">For You</button>
+            <button class="chip" onclick="filterCategory('Electronics')">Electronics</button>
+            <button class="chip" onclick="filterCategory('Books')">Books</button>
+            <button class="chip" onclick="filterCategory('Lab Tools')">Lab Tools</button>
+        </div>
+        <section class="product-grid" id="productGridDeck"></section>
+    </main>
+
+    <script>
+        const mockProducts = [
+            { id: 101, name: "Engineering Calculator FX-991ES", price: 850.00, category: "Electronics"},
+            { id: 102, name: "Medical Laboratory Coat (Medium)", price: 350.00, category: "Lab Tools"},
+            { id: 103, name: "Introduction to Java Programming", price: 420.00, category: "Books"},
+            { id: 104, name: "Wireless Presentation Clicker", price: 299.00, category: "Electronics"},
+            { id: 105, name: "Chemistry Micro-Pipette Set", price: 1200.00, category: "Lab Tools"},
+            { id: 106, name: "Data Structures & Algorithms Handbook", price: 510.00, category: "Books"},
+            { id: 107, name: "Noise Cancelling Campus Headphones", price: 1850.00, category: "Electronics"},
+            { id: 108, name: "Dissection Tool Kit Box", price: 450.00, category: "Lab Tools"},
+            { id: 109, name: "Architectural T-Square Ruler 36\"", price: 380.00, category: "Lab Tools" },
+            { id: 110, name: "Organic Chemistry Molecular Model", price: 670.00, category: "Lab Tools" }
+        ];
+        let globalCartItems = JSON.parse(localStorage.getItem('campusCartData')) || [];
+
+        function saveCartState() {
+            localStorage.setItem('campusCartData', JSON.stringify(globalCartItems));
+            updateBadgeUI();
+        }
+
+        function updateBadgeUI() {
+            const totalQuantity = globalCartItems.reduce((acc, curr) => acc + curr.quantity, 0);
+            document.getElementById('cartBadgeCount').textContent = totalQuantity;
+        }
+
+        // Render Cards dynamically based on user selections
+        function displayCatalogCards(itemsToRender) {
+            const gridDeck = document.getElementById('productGridDeck');
+            gridDeck.innerHTML = "";
+
+            if(itemsToRender.length === 0) {
+                gridDeck.innerHTML = `<p style="grid-column: 1/-1; text-align:center; opacity:0.6;">No matched items found on campus.</p>`;
+                return;
+            }
+
+            itemsToRender.forEach(prod => {
+                const card = document.createElement('article');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <div>
+                        <div class="image-placeholder">${prod.icon}</div>
+                        <div class="product-info">
+                            <h3 class="product-name">${prod.name}</h3>
+                            <p class="product-price">₱${prod.price.toFixed(2)}</p>
+                        </div>
+                    </div>
+                    <button class="add-cart-btn" onclick="pushToCart(${prod.id})">Add to Cart</button>
+                `;
+                gridDeck.appendChild(card);
+            });
+        }
+
+        // Add to Cart operational push handler
+        window.pushToCart = function(productId) {
+            const productMatch = mockProducts.find(p => p.id === productId);
+            if (!productMatch) return;
+
+            const trackingIndex = globalCartItems.findIndex(item => item.id === productId);
+            if (trackingIndex > -1) {
+                globalCartItems[trackingIndex].quantity += 1;
+            } else {
+                globalCartItems.push({
+                    id: productMatch.id,
+                    name: productMatch.name,
+                    price: productMatch.price,
+                    icon: productMatch.icon,
+                    quantity: 1
+                });
+            }
+            saveCartState();
+            alert(`"${productMatch.name}" added to your Campus Cart!`);
+        };
+
+        // Live Category Filters
+        window.filterCategory = function(categoryName) {
+            // Update Chip active state UI highlighting
+            const chips = document.querySelectorAll('.chip');
+            chips.forEach(c => c.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if (categoryName === 'all' || categoryName === 'for-you') {
+                displayCatalogCards(mockProducts);
+            } else {
+                const filtered = mockProducts.filter(p => p.category === categoryName);
+                displayCatalogCards(filtered);
+            }
+        };
+
+        // Real-time Text Input Event Filtering Hook
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const searchStr = e.target.value.toLowerCase().trim();
+            const filtered = mockProducts.filter(p => p.name.toLowerCase().includes(searchStr));
+            displayCatalogCards(filtered);
+        });
+
+        // Initialize Runtime Execution View
+        displayCatalogCards(mockProducts);
+        updateBadgeUI();
+        /* --- END OF NEW LIVE JS FUNCTIONALITIES --- */
+    </script>
+</body>
+</html>
